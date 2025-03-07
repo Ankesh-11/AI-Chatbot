@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chatbot</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            AI Chatbot
+            <button class="theme-toggle" onclick="toggleTheme()">🌙 Dark Mode</button>
+        </div>
+
+        <!-- Chat Session Selection -->
+        <div class="session-controls">
+            <select id="chat-sessions" onchange="selectChatSession()">
+                <option value="">Select Chat Session</option>
+            </select>
+            <button onclick="fetchAllChatSessions()">Refresh</button>
+        </div>
+
+        <!-- Chat Box -->
+        <div class="chat-wrapper" id="chat-wrapper">
+            <div class="code"></div>
+        </div>
+
+        <!-- Chat Input -->
+        <div class="chat-input">
+            <input type="text" id="user-input" placeholder="Type a message...." onkeypress="handleKeyPress(event)">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+
+        <!-- Chat Actions -->
+        <div class="chat-actions">
+            <button onclick="createNewChat()">New Chat</button>
+            <button onclick="fetchPaginatedQuestions()">Load Chat</button>
+            <button onclick="deleteChat()">Delete Chat</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
